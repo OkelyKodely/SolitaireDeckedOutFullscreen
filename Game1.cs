@@ -110,8 +110,8 @@ namespace Solitaire
 
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferWidth = 900;
-            graphics.PreferredBackBufferHeight = 700;
+            graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
             this.graphics.IsFullScreen = true;
         }
@@ -231,7 +231,7 @@ namespace Solitaire
         {
             _previousMouseState = _currentMouseState;
             _currentMouseState = Mouse.GetState();
-
+            
             if(firstTime)
             {
                 gameOver = false;
@@ -3521,7 +3521,7 @@ namespace Solitaire
             {
                 var mousePosition = new Point(_currentMouseState.X, _currentMouseState.Y);
 
-                Rectangle someRectangle = new Rectangle(10, 720, 150, 25);
+                Rectangle someRectangle = new Rectangle(10, 650, 100, 25);
 
                 Rectangle area = someRectangle;
 
