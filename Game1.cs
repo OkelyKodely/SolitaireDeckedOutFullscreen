@@ -3817,7 +3817,7 @@ namespace Solitaire
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
-            spriteBatch.Draw(bgg[ii], new Rectangle(0, 0, 900, 700), Color.DarkGray);
+            spriteBatch.Draw(bgg[ii], new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.DarkGray);
 
             spriteBatch.Draw(bg[iibgg], new Rectangle(700, 0, 200, 200), Color.White);
 
@@ -3825,10 +3825,8 @@ namespace Solitaire
             {
                 if (stack.Count == 52)
                 {
-                    if (!stopTimer)
-                        MessageBox.Show("Congratulations!  You Won!");
                     stopTimer = true;
-                    spriteBatch.Draw(bg[iibgg], new Rectangle(0, 0, 900, 700), Color.White);
+                    spriteBatch.Draw(bg[iibgg], new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
                     spriteBatch.DrawString(spriteFont, "You Won!", new Vector2(10, 300), Color.Black);
                     spriteBatch.DrawString(spriteFont, "You took " + hour + ":" + minute + ":" + seconds, new Vector2(10, 330), Color.Black);
                 }
